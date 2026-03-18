@@ -1,24 +1,20 @@
 package com.automation.tests;
 
-import com.automation.PageObjects.Footers_UI;
+import com.automation.PageObjects.Footers_UI_Page;
 import com.automation.tests.testComponents.BaseTest;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class CheckFooterLinks_UI extends BaseTest {
-    Footers_UI footer;
+public class CheckFooterLinks_UI_Test extends BaseTest {
+    Footers_UI_Page footer;
     @BeforeMethod
     public void initialize(){
-        footer = new Footers_UI(driver);
+        footer = new Footers_UI_Page(driver);
     }
     @Test
     public void checkFooterLinks() throws IOException {
