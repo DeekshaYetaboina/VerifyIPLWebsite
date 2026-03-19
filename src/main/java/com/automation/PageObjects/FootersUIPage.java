@@ -11,11 +11,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Footers_UI_Page extends AbstractComponents {
+public class FootersUIPage extends AbstractComponents {
 
     SeleniumUtils seleniumUtils =  new SeleniumUtils(driver);
 
-    public Footers_UI_Page(WebDriver driver) {
+    public FootersUIPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
     }

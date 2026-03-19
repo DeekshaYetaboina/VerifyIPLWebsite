@@ -1,6 +1,6 @@
 package com.automation.tests;
 
-import com.automation.PageObjects.Footers_API_Page;
+import com.automation.PageObjects.FootersAPIPage;
 import com.automation.tests.testComponents.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -11,11 +11,11 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Map;
 
-public class CheckFooterLinks_API_Test extends BaseTest {
-    Footers_API_Page footersAPIPage;
+public class CheckFooterLinksAPITest extends BaseTest {
+    FootersAPIPage footersAPIPage;
    @BeforeMethod
    public void initialize(){
-        footersAPIPage = new Footers_API_Page(driver);
+        footersAPIPage = new FootersAPIPage(driver);
    }
     @Test
     public void checkFooterLinks() throws URISyntaxException, IOException {

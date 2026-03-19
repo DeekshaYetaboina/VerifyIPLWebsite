@@ -1,6 +1,6 @@
 package com.automation.tests;
 
-import com.automation.PageObjects.Footers_UI_Page;
+import com.automation.PageObjects.FootersUIPage;
 import com.automation.tests.testComponents.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,11 +10,11 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class CheckFooterLinks_UI_Test extends BaseTest {
-    Footers_UI_Page footer;
+public class CheckFooterLinksUITest extends BaseTest {
+    FootersUIPage footer;
     @BeforeMethod
     public void initialize(){
-        footer = new Footers_UI_Page(driver);
+        footer = new FootersUIPage(driver);
     }
     @Test
     public void checkFooterLinks() throws IOException {

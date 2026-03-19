@@ -6,7 +6,6 @@ import com.automation.SeleniumUtils.SeleniumUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -14,19 +13,22 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.*;
 
-public class Footers_API_Page extends AbstractComponents {
+public class FootersAPIPage extends AbstractComponents {
     SeleniumUtils seleniumUtils = new SeleniumUtils(driver);
-    public Footers_API_Page(WebDriver driver) {
+    public FootersAPIPage(WebDriver driver) {
         super(driver);
         this.driver=driver;
     }
-
     By footer= By.cssSelector(IPLPageSelectors.footerSection);
+
 
     public void goToFooter(){
         seleniumUtils.scrollToElement(footer);
     }
+
+
     public Map<String,Integer> checkLinks(String cssSelector) throws URISyntaxException, IOException {
+
          Map<String,Integer> linkinfo = new HashMap<>();
          List<WebElement> links = driver.findElements(By.cssSelector(cssSelector));
 
