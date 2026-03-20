@@ -47,4 +47,10 @@ public class BaseTest {
       return data.get(key);
   }
 
+    public String getJsonString(String filename, String key) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        Map<String, Object> data = mapper.readValue(new File(filename), Map.class);
+        return (String) data.get(key);
+    }
+
 }
