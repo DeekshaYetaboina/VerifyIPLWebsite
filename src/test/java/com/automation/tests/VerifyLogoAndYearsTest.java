@@ -1,6 +1,8 @@
 package com.automation.tests;
 
+import com.automation.AbstractComponents.AbstractComponents;
 import com.automation.PageObjects.LogoAndYearsPage;
+import com.automation.TestUtils.TestDataUtils;
 import com.automation.tests.testComponents.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -11,6 +13,7 @@ import java.util.List;
 
 public class VerifyLogoAndYearsTest extends BaseTest {
 
+    TestDataUtils testDataUtils = new TestDataUtils();
     LogoAndYearsPage logoAndYearsPage;
 
     @BeforeMethod
@@ -22,7 +25,7 @@ public class VerifyLogoAndYearsTest extends BaseTest {
     public void verifyLogos() throws IOException {
         logoAndYearsPage.execute("TEAMS");
         List<String> actualUrls = logoAndYearsPage.logos();
-        List<String> expectedUrls = getJsonData(System.getProperty("user.dir")+"\\src\\test\\java\\com\\automation\\data\\ExpectedUrls.json","expectedUrls");
+        List<String> expectedUrls = getJsonData(testDataUtils.getPath("ExpectedUrls"), "expectedUrls");
         Assert.assertTrue(actualUrls.equals(expectedUrls),"Expected Logos are Actual Logos differ");
     }
 
@@ -30,7 +33,7 @@ public class VerifyLogoAndYearsTest extends BaseTest {
     public void verifyYears() throws IOException {
         logoAndYearsPage.execute("TEAMS");
         List<String> actualYears = logoAndYearsPage.getYears();
-        List<String> expectedYears = getJsonData("C:\\Projects\\selenium-project\\src\\test\\java\\com\\automation\\data\\ExpectedYears.json","expectedYears");
+        List<String> expectedYears = getJsonData(testDataUtils.getPath("ExpectedYears"), "expectedYears");
 
         Assert.assertEquals(actualYears,expectedYears,"Expected Actual Years differ");
     }

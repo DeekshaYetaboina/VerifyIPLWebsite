@@ -1,6 +1,9 @@
 package com.automation.tests;
 
+import com.automation.AbstractComponents.AbstractComponents;
 import com.automation.PageObjects.SearchResultsPage;
+import com.automation.TestUtils.TestDataUtils;
+import com.automation.constants.IPLConstants;
 import com.automation.tests.testComponents.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -12,6 +15,7 @@ import java.util.List;
 public class VerifySearchResultsTest extends BaseTest {
 
         SearchResultsPage searchResultsPage;
+    TestDataUtils testDataUtils = new TestDataUtils();
 
 
 
@@ -22,15 +26,14 @@ public class VerifySearchResultsTest extends BaseTest {
 
         @Test
         public void verifySearchResultsPage() throws IOException {
-        String path = System.getProperty("user.dir")+"\\src\\test\\java\\com\\automation\\data\\ExpectedSearchResult.json";
-        String header=getJsonString(path,"header");
-            String searchText =getJsonString(path,"searchText");
+        String path = testDataUtils.getPath("ExpectedSearchResult");
+        String header=testDataUtils.getJsonString(path,"header");
+            String searchText =testDataUtils.getJsonString(path,"searchText");
             List<String> expectedText=getJsonData(path,"expectedKeywords");
             searchResultsPage.execute(header);
             searchResultsPage.navigateToNewsSection(searchText);
-            searchResultsPage.verifySearchResultsPage();
             boolean textFound =searchResultsPage.isArticleFound(expectedText);
-            Assert.assertTrue(textFound,"No article found on auction 2026");
+            Assert.assertTrue(textFound, IPLConstants.message);
 
         }
 

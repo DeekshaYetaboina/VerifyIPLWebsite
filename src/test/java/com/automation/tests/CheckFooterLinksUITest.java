@@ -1,6 +1,8 @@
 package com.automation.tests;
 
+
 import com.automation.PageObjects.FootersUIPage;
+import com.automation.TestUtils.TestDataUtils;
 import com.automation.tests.testComponents.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CheckFooterLinksUITest extends BaseTest {
+    TestDataUtils testDataUtils = new TestDataUtils();
     FootersUIPage footer;
     @BeforeMethod
     public void initialize(){
@@ -21,7 +24,7 @@ public class CheckFooterLinksUITest extends BaseTest {
         SoftAssert a = new SoftAssert();
         footer.goToFooter();
         List<String> actualValues=footer.getActualValues();
-        List<String> expectedValues=getJsonData(System.getProperty("user.dir")+"\\src\\test\\java\\com\\automation\\data\\ExpectedFooterData.json","expectedFooterData");
+        List<String> expectedValues=getJsonData(testDataUtils.getPath("ExpectedFooterData"), "expectedFooterData");
         a.assertTrue(actualValues.equals(expectedValues),"Each section text is not matching expected values");
         Map<String, String> info = footer.getLinks();
         for (Map.Entry<String, String> entry : info.entrySet()) {

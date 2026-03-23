@@ -22,7 +22,6 @@ public class SearchResultsPage extends AbstractComponents {
         driver.findElement(By.cssSelector((IPLPageSelectors.headers).replace("%s", header))).click();
     }
 
-    By allTeams = By.cssSelector("ul.dropdown.arrow-top li.news.sub_menu a[data-element_text=\'ALL NEWS\']");
     By searchButton = By.cssSelector("button.search-icon-header-menu");
     By searchTab = By.cssSelector("input#searchInputForHeader");
     By newsSection = By.cssSelector("div.vn-latest-news");
@@ -30,7 +29,6 @@ public class SearchResultsPage extends AbstractComponents {
 
 
     public void navigateToNewsSection(String searchText) {
-        driver.findElement(allTeams).click();
         seleniumUtils.waitForUrlToLoad("https://www.iplt20.com/news");
         driver.findElement(searchButton).click();
         seleniumUtils.waitForElementToAppear(searchTab);
