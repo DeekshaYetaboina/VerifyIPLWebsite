@@ -14,10 +14,11 @@ import java.net.URISyntaxException;
 import java.util.*;
 
 public class FootersAPIPage extends AbstractComponents {
-    SeleniumUtils seleniumUtils = new SeleniumUtils(driver);
+    SeleniumUtils seleniumUtils;
     public FootersAPIPage(WebDriver driver) {
         super(driver);
-        this.driver=driver;
+
+         seleniumUtils = new SeleniumUtils(driver);
     }
     By footer= By.cssSelector(IPLPageSelectors.footerSection);
 

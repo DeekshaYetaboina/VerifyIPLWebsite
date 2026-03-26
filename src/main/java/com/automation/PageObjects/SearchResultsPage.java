@@ -12,14 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchResultsPage extends AbstractComponents {
-    SeleniumUtils seleniumUtils = new SeleniumUtils(driver);
+    SeleniumUtils seleniumUtils;
 
     public SearchResultsPage(WebDriver driver) {
         super(driver);
+        seleniumUtils = new SeleniumUtils(driver);
     }
 
+    @Override
     public void execute(String header) {
-        driver.findElement(By.cssSelector((IPLPageSelectors.headers).replace("%s", header))).click();
+        super.execute(header);
     }
 
     By searchButton = By.cssSelector("button.search-icon-header-menu");

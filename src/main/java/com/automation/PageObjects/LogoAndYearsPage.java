@@ -12,19 +12,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LogoAndYearsPage extends AbstractComponents {
-     SeleniumUtils seleniumUtils = new SeleniumUtils(driver);
+     SeleniumUtils seleniumUtils;
 
     public LogoAndYearsPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
+        seleniumUtils = new SeleniumUtils(driver);
 
     }
+
+    @Override
+    public void execute(String header) {
+        super.execute(header);
+    }
+
     By teamLogo = By.cssSelector(IPLPageSelectors.teamLogo);
     By teamCards = By.cssSelector(IPLPageSelectors.teamCards);
 
-    public void execute(String header) {
-        driver.findElement(By.cssSelector((IPLPageSelectors.headers).replace("%s", header))).click();
-    }
+
 
     public List<String> logos() {
         List<String> logoUrls = new ArrayList<>();

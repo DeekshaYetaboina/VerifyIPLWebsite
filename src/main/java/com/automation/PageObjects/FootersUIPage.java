@@ -13,11 +13,11 @@ import java.util.Map;
 
 public class FootersUIPage extends AbstractComponents {
 
-    SeleniumUtils seleniumUtils =  new SeleniumUtils(driver);
+    SeleniumUtils seleniumUtils;
 
     public FootersUIPage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
+        seleniumUtils = new SeleniumUtils(driver);
     }
 
     By footer = By.cssSelector(IPLPageSelectors.footerSection);

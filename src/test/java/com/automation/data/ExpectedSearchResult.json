@@ -1,6 +1,5 @@
 {
-  "path":"System.getProperty('user.dir')+'\\src\\test\\java\\com\\automation\\data\\ExpectedSearchResult.json'",
-  "header": "NEWS",
+   "header": "NEWS",
 "searchText":"Auction 2026",
 "expectedKeywords":["auction","2026"]
 }

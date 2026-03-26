@@ -16,5 +16,8 @@ public class AbstractComponents {
 
     }
 
+    public void execute(String header) {
+        driver.findElement(By.cssSelector((IPLPageSelectors.headers).replace("%s", header))).click();
+    }
 
 }

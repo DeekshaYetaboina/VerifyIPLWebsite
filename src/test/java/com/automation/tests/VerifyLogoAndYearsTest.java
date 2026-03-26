@@ -23,18 +23,21 @@ public class VerifyLogoAndYearsTest extends BaseTest {
 
     @Test
     public void verifyLogos() throws IOException {
-        logoAndYearsPage.execute("TEAMS");
+        String path = testDataUtils.getPath("ExpectedUrls");
+        List<String> expectedUrls = getJsonData(path, "expectedUrls");
+        String header = testDataUtils.getJsonString(path,"header");
+        logoAndYearsPage.execute(header);
         List<String> actualUrls = logoAndYearsPage.logos();
-        List<String> expectedUrls = getJsonData(testDataUtils.getPath("ExpectedUrls"), "expectedUrls");
         Assert.assertTrue(actualUrls.equals(expectedUrls),"Expected Logos are Actual Logos differ");
     }
 
     @Test
     public void verifyYears() throws IOException {
-        logoAndYearsPage.execute("TEAMS");
+        String path=testDataUtils.getPath("ExpectedYears");
+        String header = testDataUtils.getJsonString(path,"header");
+        logoAndYearsPage.execute(header);
         List<String> actualYears = logoAndYearsPage.getYears();
-        List<String> expectedYears = getJsonData(testDataUtils.getPath("ExpectedYears"), "expectedYears");
-
+        List<String> expectedYears = getJsonData(path, "expectedYears");
         Assert.assertEquals(actualYears,expectedYears,"Expected Actual Years differ");
     }
 }
