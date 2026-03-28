@@ -4,11 +4,11 @@ import com.automation.IPLPageSelectors;
 import com.automation.SeleniumUtils.SeleniumUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 
 public class AbstractComponents {
     protected WebDriver driver;
-    SeleniumUtils seleniumUtils= new SeleniumUtils(driver);
+
 
 
     public AbstractComponents(WebDriver driver) {
@@ -18,6 +18,7 @@ public class AbstractComponents {
 
     public void execute(String header) {
         driver.findElement(By.cssSelector((IPLPageSelectors.headers).replace("%s", header))).click();
+
     }
 
 }

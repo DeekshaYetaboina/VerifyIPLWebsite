@@ -31,7 +31,7 @@ public class FootersUIPage extends AbstractComponents {
     public List<String> getActualValues() {
         List<String> text = new ArrayList<>();
         List<WebElement> sections =driver.findElements(menuSections);
-        seleniumUtils.waitForElementToAppear(sections.get(0));
+        seleniumUtils.waitForElementToAppear(sections.getFirst());
         for (WebElement section : sections) {
             String value = section.getText().replaceAll("\n", " ").trim();
             text.add(value);
@@ -43,7 +43,7 @@ public class FootersUIPage extends AbstractComponents {
         Map<String, String> info = new HashMap<>();
         List<String> urls = new ArrayList<>();
         List<WebElement> links = driver.findElements(footerLinks);
-        seleniumUtils.waitForElementToAppear(links.get(0));
+        seleniumUtils.waitForElementToAppear(links.getFirst());
         for (WebElement link : links) {
             String href = link.getAttribute("href");
             if (href != null && !href.isEmpty()) {

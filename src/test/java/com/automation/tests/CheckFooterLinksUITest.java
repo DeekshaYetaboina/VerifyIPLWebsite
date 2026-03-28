@@ -24,7 +24,7 @@ public class CheckFooterLinksUITest extends BaseTest {
         SoftAssert a = new SoftAssert();
         footer.goToFooter();
         List<String> actualValues=footer.getActualValues();
-        List<String> expectedValues=getJsonData(testDataUtils.getPath("ExpectedFooterData"), "expectedFooterData");
+        List<String> expectedValues=testDataUtils.getJsonData(testDataUtils.getPath("ExpectedFooterData"), "expectedFooterData");
         a.assertTrue(actualValues.equals(expectedValues),"Each section text is not matching expected values");
         Map<String, String> info = footer.getLinks();
         for (Map.Entry<String, String> entry : info.entrySet()) {

@@ -24,10 +24,10 @@ public class SearchResultsPage extends AbstractComponents {
         super.execute(header);
     }
 
-    By searchButton = By.cssSelector("button.search-icon-header-menu");
-    By searchTab = By.cssSelector("input#searchInputForHeader");
-    By newsSection = By.cssSelector("div.vn-latest-news");
-    By allArticles = By.cssSelector("li.textTwoLine");
+    By searchButton = By.cssSelector(IPLPageSelectors.searchButton);
+    By searchTab = By.cssSelector(IPLPageSelectors.searchTab);
+    By newsSection = By.cssSelector(IPLPageSelectors.newsSection);
+    By allArticles = By.cssSelector(IPLPageSelectors.allArticles);
 
 
     public void navigateToNewsSection(String searchText) {

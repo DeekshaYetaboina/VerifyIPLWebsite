@@ -31,8 +31,8 @@ public class VerifyPointsTable extends BaseTest {
         String actualMatchesPlayed = pointsTable.getActualMatchesPlayed();
 
         System.out.println("Top Team: " + topTeam);
-        Assert.assertEquals(actualPoints, expectedPoints);
-        Assert.assertEquals(actualMatchesPlayed, expectedMatchesPlayed);
+        Assert.assertEquals(actualPoints, expectedPoints,"The actual and expected points don't match");
+        Assert.assertEquals(actualMatchesPlayed, expectedMatchesPlayed,"the actual matches played and expected don't match");
 
 
     }

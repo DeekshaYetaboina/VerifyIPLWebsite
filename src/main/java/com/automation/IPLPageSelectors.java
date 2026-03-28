@@ -9,8 +9,13 @@ public class IPLPageSelectors {
     public static String teamCards=".vn-teamsInnerWrp li";
     public static String teamWinningYears=".team-on-hover";
     public static String teams = ".ih-pt-cont";
-    public static String scores = "td.ng-binding";
-
+    public static String matches = "td.ng-binding";
+    public static String points =".bt.ng-binding";
+    public static String searchButton ="button.search-icon-header-menu";
+    public static String searchTab ="input#searchInputForHeader";
+    public static String newsSection ="div.vn-latest-news";
+    public static String allArticles="li.textTwoLine";
+    public static String pointsTable ="section.w-100.pull-left";
 
 
 }

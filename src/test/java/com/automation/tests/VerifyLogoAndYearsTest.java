@@ -1,6 +1,5 @@
 package com.automation.tests;
 
-import com.automation.AbstractComponents.AbstractComponents;
 import com.automation.PageObjects.LogoAndYearsPage;
 import com.automation.TestUtils.TestDataUtils;
 import com.automation.tests.testComponents.BaseTest;
@@ -24,11 +23,11 @@ public class VerifyLogoAndYearsTest extends BaseTest {
     @Test
     public void verifyLogos() throws IOException {
         String path = testDataUtils.getPath("ExpectedUrls");
-        List<String> expectedUrls = getJsonData(path, "expectedUrls");
+        List<String> expectedUrls = testDataUtils.getJsonData(path, "expectedUrls");
         String header = testDataUtils.getJsonString(path,"header");
         logoAndYearsPage.execute(header);
         List<String> actualUrls = logoAndYearsPage.logos();
-        Assert.assertTrue(actualUrls.equals(expectedUrls),"Expected Logos are Actual Logos differ");
+        Assert.assertEquals(actualUrls,expectedUrls,"Expected Logos are Actual Logos differ");
     }
 
     @Test
@@ -37,7 +36,7 @@ public class VerifyLogoAndYearsTest extends BaseTest {
         String header = testDataUtils.getJsonString(path,"header");
         logoAndYearsPage.execute(header);
         List<String> actualYears = logoAndYearsPage.getYears();
-        List<String> expectedYears = getJsonData(path, "expectedYears");
+        List<String> expectedYears = testDataUtils.getJsonData(path, "expectedYears");
         Assert.assertEquals(actualYears,expectedYears,"Expected Actual Years differ");
     }
 }
